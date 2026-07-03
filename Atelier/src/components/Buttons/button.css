@@ -1,3 +1,8 @@
+.btn-base{
+    background-color: transparent;
+    border:none;
+}
+
 .button-counter{
     display: flex;
     align-items: center;
@@ -130,3 +135,4 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+

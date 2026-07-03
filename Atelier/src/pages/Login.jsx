@@ -3,9 +3,11 @@ import './pages.css'
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react'
 import { usuarios } from '../../src/data/data.js'
-import ButtonBase from '../components/Buttons/ButtonBase';
+import ButtonBase from '../components/Buttons/ButtonBase.jsx';
 import Logo from '../assets/atelier-logo.png'
+import logout from '../assets/logout.png'
 import Swal from 'sweetalert2'
+import '../components/Buttons/button.css'
 
 
 
@@ -44,10 +46,16 @@ function LogIn() {
     };
   }
 
+  const handleLogout = () => {
+    navigate('/')
+  }
+
   return (
     <div className="container">
       <div className="logout">
-        <img src="../../src/assets/logout.png" alt="" />
+        <ButtonBase onClick={handleLogout}>
+          <img src={logout} alt="Logout" className="btn-logout"/>
+        </ButtonBase>
       </div>
       <form>
           <div className="logo">
