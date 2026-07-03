@@ -1,0 +1,62 @@
+body{
+    position: relative;
+    background: #000 var(--background-image) no-repeat center center fixed;
+    background-size: cover;
+    z-index: 1;
+}
+
+form{
+    margin: 9% auto;
+    width: 300px;
+    height: 21em;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 80px rgba(239, 237, 237, 0.1);
+    background-color: var(--secondary-color);
+}
+
+.logo{
+    margin: -30px 65px 50px;
+}
+
+.logo img{
+    width: 150px;
+    height: auto;
+}
+
+input{
+    background-color: var(--primary-color);
+    border: none;
+    height: 30px;
+    width: 90%;
+    border-radius: 8px;
+    color: var(--font-color-secondary);
+    padding-left: 10px;
+}
+
+.btn-login{
+    margin: 4em 1em;
+    padding:7px;
+    width: 90%;
+    height: 37px;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--font-color-secondary);
+} 
+
+.btn-login:hover{
+    background-color: var(--font-color-main);
+    color: var(--primary-color);
+}
+
+form label{
+    color: var(--font-color-main);
+    font-family: var(--font-main);
+    font-size: 1.1em;
+    margin: 10px;
+    padding: 0;
+}
+
+
+
+

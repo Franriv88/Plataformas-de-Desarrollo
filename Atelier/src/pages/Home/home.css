@@ -1,0 +1,95 @@
+.homeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: var(--primary-color);
+    position: relative;
+    background: #000 var(--background-image) no-repeat center center fixed;
+    background-size: cover;
+    z-index: 1;
+}
+
+.buttonContainer{
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    z-index: 1000;
+    position: fixed;
+}
+
+.textContainer{
+    margin-top: 10%;
+}
+
+.homeTitle{
+    font-family: "Georgia", "Palatino", "Times New Roman", serif;
+    font-style: italic;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    color: var(--font-color-main);
+    font-weight: 400;
+}
+
+.homeDivider{
+    width: 60px;
+    height: 1px;
+    background-color: var(--border-color-secondary);
+}
+
+.homeTagline{
+    font-family: var(--font-main);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--font-color-secondary);
+    margin-bottom: 20px;
+}
+
+.homeText{
+    font-family: var(--font-main);
+    color: var(--font-color-secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 1000px;
+    opacity: 0;
+    animation: aparecer 1s ease-in-out 0.7s forwards;
+}
+    @keyframes aparecer {
+        0%, 100% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+.imageContainer{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.imageContainer img{
+    width: 20vw;
+    height: 40vh;
+    padding: 10px;
+    animation: aparecer 1s ease-in-out 0.7s forwards;
+    animation: deslizarEntrada 1.2s ease-out 0.5s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+    @keyframes deslizarEntrada {
+  to {
+    /* Estado final: visible y en su posición original exacta */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html, body {
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE y Edge viejo */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;               /* Chrome, Safari, Edge nuevo (basados en Chromium/WebKit) */
+}

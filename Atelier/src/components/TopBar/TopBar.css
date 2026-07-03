@@ -1,0 +1,44 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 20px;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--font-color-main);
+}
+
+.profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin:0 15px 
+}
+
+.userInfo{
+    display:flex;
+    margin-right: 25px;
+    margin-left: 10%;
+}
+
+.userName{
+    margin-top:20px;
+    font-weight: bolder;
+}
+
+.btnExit{
+    width: 80px;
+    height: 30px;
+    color: #f50606;
+    font-weight: bold;
+    margin-left: 20px;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color-main);
+    border-radius: 5px;
+
+}

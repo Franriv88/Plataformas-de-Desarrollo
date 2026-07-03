@@ -1,0 +1,18 @@
+/* src/index.css */
+:root {
+  --primary-color: #00244f;
+  --secondary-color: #001634;
+  --contrast-color: #f2ede6;
+  --background-image: url('https://i.ibb.co/gF6jDkp5/Gemini-Generated-Image-s67hyos67hyos67h.png');
+  --font-main: 'Iner', sans-serif;
+  --font-color-main: #9a771e;
+  --font-color-secondary: #f2ede6;
+  --padding-button: 10px 20px;
+  --border-color-main: #f50606;
+  --border-color-secondary: #1F2A44;
+  --border: 1px solid;
+  --border-radius: 5px;
+  --border-radius-circle: 50%;
+}
+
+

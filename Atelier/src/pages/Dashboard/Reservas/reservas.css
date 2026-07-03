@@ -1,0 +1,7 @@
+.reservasContainer h1{
+    margin-left: 20px;
+    color: var(--font-color-main);
+    background-color: var(--secondary-color);
+    font-family: var(--font-main);
+    padding: 10px;
+}

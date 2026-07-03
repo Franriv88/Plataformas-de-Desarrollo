@@ -1,0 +1,132 @@
+.button-counter{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fbf8f8;
+}
+
+.button__add{
+    width: 30px;
+    height: 30px;
+    background-color: #03a326;
+    color: var(--font-color-secondary);
+    font-weight: bolder;
+    border-color: var(--border-color-secondary);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button__subtract{
+    width: 30px;
+    height: 30px;
+    background-color: #d03032;
+    color: var(--font-color-secondary);
+    font-weight: bolder;
+    border-color: var(--border-color-secondary);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-Add{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    background-color: var(--secondary-color);
+    color: var(--font-color-secondary);
+    cursor: pointer;
+    margin-left: 35px;
+    transition: transform 0.3s ease;
+}
+
+.btn-Add:hover{
+    scale: 1.1;
+    transform: scale(1.1);
+    transform: rotate(10deg);
+
+}
+
+.btn-save{
+    width: 85px;
+    height: 37px;
+    margin: 0 10px;
+    background-color: var(--contrast-color);
+    color: var(--primary-color);
+    font-weight: bolder;
+    border-color: var(--border-color-secondary);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+}
+
+.btn-cardCreate{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    border-color:none;
+}
+
+.btn-edit{
+    width: 85px;
+    height: 37px;
+    background-color: var(--contrast-color);
+    color: var(--primary-color);
+    font-weight: bolder;
+    border-color: var(--border-color-secondary);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+}
+
+.btn-delete{
+    cursor: pointer;
+    border: none;
+}
+
+.btn-workshop, .btn-reserva{
+    background-color: var(--secondary-color);
+    color: var(--font-color-secondary);
+    border:none;
+    font-size: 1.5em;
+}
+
+    .btn-workshop:hover{
+        border-bottom:2px solid var(--font-color-main);
+    }
+
+    .btn-reserva:hover{
+        border-bottom:2px solid var(--font-color-main);
+    }
+
+    .btn-reserv{
+        width: 350px;
+        height: 37px;
+        background-color: var(--secondary-color);
+        color: var(--font-color-main);
+        font-weight: bolder;
+        border-color: var(--border-color-secondary);
+        cursor: pointer;
+        border-radius: var(--border-radius);
+        font-family: var(--font-main);
+        font-size: 1.1em;
+    }
+
+    .btn-reserv:hover{
+        background-color: var(--primary-color);
+        color: var(--font-color-secondary);
+    }
+
+.btn-loginHome {
+    width: 90px;
+    height: 37px;
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: var(--font-color-main);
+    font-family: var(--font-main);
+    padding: 10px 20px;
+    border: 1px solid var(--font-color-main);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
