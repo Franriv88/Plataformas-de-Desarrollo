@@ -93,3 +93,4 @@ html, body {
 html::-webkit-scrollbar, body::-webkit-scrollbar {
     display: none;               /* Chrome, Safari, Edge nuevo (basados en Chromium/WebKit) */
 }
+

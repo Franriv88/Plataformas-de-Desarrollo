@@ -46,6 +46,9 @@ function LogIn() {
 
   return (
     <div className="container">
+      <div className="logout">
+        <img src="../../src/assets/logout.png" alt="" />
+      </div>
       <form>
           <div className="logo">
             <img src={Logo} alt="Atelier" />
