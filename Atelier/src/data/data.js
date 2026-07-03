@@ -17,6 +17,16 @@ export const usuarios = [
         password: "abcd",
         img: "https://i.ibb.co/BVzW570p/Logo-Sin-Esquinas.webp"
     },
+    {
+        id: 3,
+        rol: "admin",
+        name: "Victor",
+        lastName: "Villafañe",
+        email: "victor.villafane@davinci.edu.ar",
+        password: "12345",
+        img: "https://i.ibb.co/7x0wxQjR/profesor-Logo-removebg-preview.png"
+    },
+
 ]
 
 export const talleres = [

@@ -54,7 +54,8 @@ function CardCreate() {
     <div>
       <form className='card-create'>
         <div>
-          {/* <ButtonBase label="TALLER" onClick={}/>
+          {/* Acá se me ocurrió que cada card indique si es un taller, un workshop o un curso 
+          <ButtonBase label="TALLER" onClick={}/>
           <ButtonBase label="WORKSHOP" onClick={}/>
           <ButtonBase label="CURSO" onClick={}/> */}
         </div>

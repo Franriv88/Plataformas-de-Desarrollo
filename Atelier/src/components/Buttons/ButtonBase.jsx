@@ -17,4 +17,4 @@ const ButtonBase = ({ children, label, onClick, className, disabled, type = "but
 
 export default ButtonBase
 
-//Obs: podrías haber usado el Spread Operator {...props} para pasar todas las props sin tener que escribir una por una. Pero esto por ahora me parece más entendible  ""
+//Obs: podría haber usado el Spread Operator que pregunté en clase {...props} para pasar todas las props sin tener que escribir una por una. Pero esto por ahora me parece más entendible en este caso
