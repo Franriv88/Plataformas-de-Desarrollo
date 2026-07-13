@@ -5,7 +5,11 @@ import { useState, useEffect } from 'react'
 import ButtonBase from '../Buttons/ButtonBase.jsx'
 import './TopBar.css'
 
+import { useEmail } from '../../context/session.context.jsx'
+
 function TopBar({label, onClick}) {
+  const email = useEmail()
+
   const navigate = useNavigate();
   const [userName, setUserName] = useState('') 
   const [userImg, setUserImg] = useState('')
@@ -16,7 +20,7 @@ function TopBar({label, onClick}) {
   useEffect(() => {
     const idObtain = localStorage.getItem("userId") //acá lleag como un string
     const idNumber = Number(idObtain) //lo convierto a número
-    const userFound = usuarios.find(u => u.id === idNumber)
+    const userFound = usuarios.find(u => u.email === email) //el dato de quién está logueado viene del email ahora
 
     if(userFound) {
       setUserImg(userFound.img);

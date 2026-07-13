@@ -9,9 +9,13 @@ import logout from '../assets/logout.png'
 import Swal from 'sweetalert2'
 import '../components/Buttons/button.css'
 
+import {useLogin} from '../context/session.context.jsx'
+
 
 
 function LogIn() {
+  const onLogin = useLogin()  
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [id, setId] = useState('')
@@ -22,12 +26,14 @@ function LogIn() {
     event.preventDefault() //uso el preventDefautl xq no quiero que se recargue por ser un formulario
 
     const foundUser = usuarios.find((u) => u.email === email && u.password === password);
-        //acá tendré que validar las credenciales
+    
+      //acá tendré que validar las credenciales
       if(foundUser){
         // Si encontramos coincidencia guardo el rol, nombre y el id del usuario en LocalStorage
-        localStorage.setItem("userRol", foundUser.rol);
-        localStorage.setItem("userName", foundUser.name);
-        localStorage.setItem("userId", foundUser.id);
+        // localStorage.setItem("userRol", foundUser.rol);
+        // localStorage.setItem("userName", foundUser.name);
+        // localStorage.setItem("userId", foundUser.id);
+        onLogin(foundUser.email)
 
         if (foundUser.rol === "admin"){
           navigate('/workshop')

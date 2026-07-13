@@ -5,11 +5,16 @@ import Card from '../../components/Card/Card.jsx'
 import { useState } from 'react'
 import Workshop from './Workshops/Workshop.jsx'
 
-function Dashboard() {
+import {useEmail} from '../../context/session.context.jsx'
+
+
+const Dashboard = () => {
+  const email = useEmail()
 
   return (
     <div className="containerDashboard">
       <TopBar />
+        {email}
       <Navbar />
       <Card />
     </div>

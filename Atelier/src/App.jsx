@@ -10,6 +10,8 @@ import CardCreate from './components/Card/CardCreate.jsx'
 import Reservas from './pages/Dashboard/Reservas/Reservas.jsx'
 import Gallery from './pages/Gallery/Gallery.jsx'
 
+import NotFound from '/pages/NotFound/NotFound.jsx'
+
 
 
 
@@ -27,6 +29,7 @@ const App = () => {
           <Route path="/cardcreate" element={<CardCreate />} />
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Rout path="*" element={<NotFound />} /> 
         </Routes>
       </BrowserRouter>
     </>
@@ -36,3 +39,4 @@ const App = () => {
 
 export default App
 
+// <Rout path="*" element=<div>404</div>
