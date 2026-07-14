@@ -6,6 +6,8 @@ import ButtonCounter from '../Buttons/ButtonCounter.jsx'
 import ButtonBase from '../Buttons/ButtonBase.jsx'
 import './Card.css'
 
+import { saveWorkshop } from '../../services/workshopService.js'
+
 function CardCreate() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,20 +22,8 @@ function CardCreate() {
   };
  
   const handleSave = () => {
-    // leo lo que ya hay en local y si no hay nada comienzo con un array vació. Se guarda en "existente"
-    const existente = JSON.parse(localStorage.getItem("workshopList")) || [] 
-    //pregunto si existe o no
-    if(editData){
-      const actualizado = existente.map((item, i) => i === editData.index ? formData : item)
-      // guado el arrya completo
-      localStorage.setItem("workshopList", JSON.stringify(actualizado))
-    }else{
-      //Crear Nuevo: agrega un formData al final del array
-      existente.push(formData)
-      localStorage.setItem("workshopList", JSON.stringify(existente))
-    }
-
-    navigate("/workshop"); // volvemos a Card.jsx
+    saveWorkshop(formData, editData?.index) //uso de nuevo la notación "otpional chaining" -> apréndela bien sin tener que leer!
+    navigate("/workshop");
   };
 
   //ButtonCounter para setear la cant de cupos
