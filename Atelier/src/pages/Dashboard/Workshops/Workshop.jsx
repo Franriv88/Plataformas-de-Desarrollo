@@ -10,18 +10,17 @@ import trashIcon from '../../../assets/trash.png'
 import './workshop.css'
 import Swal from 'sweetalert2'
 
+import { getWorkshops, deleteWorkshop } from '../../../services/workshopService.js'
+
 
 function ListaWorkshops(){
     const [workshops, setWorkshops] = useState([]); 
     const navigate = useNavigate();
 
     useEffect(() => {
-      //leo el sting
-      const savedWorkshops = localStorage.getItem("workshopList");
-      //si existe info la parseo, si no, me devuelve un array vacío
-      if (savedWorkshops) {
-        setWorkshops(JSON.parse(savedWorkshops));
-      }
+      // llamo a getWorkshop del workshopService.js
+      setWorkshops(getWorkshops())
+
     }, []); //este es el array de dependencias, si no pongo nada, se ejecuta una sola vez al montar el componente. Si pongo algo, se ejecuta cada vez que ese algo cambie.
 
     const handleEdit = (index, item) => {
@@ -38,9 +37,8 @@ function ListaWorkshops(){
           cancelButtonText: "Cancelar"
           }).then((result) => {
             if (result.isConfirmed) {
-              const actualizado = workshops.filter((item, i) => i !== indexToDelete);
+              const actualizado = deleteWorkshop(indexToDelete)
               setWorkshops(actualizado);
-              localStorage.setItem("workshopList", JSON.stringify(actualizado));
             }
           });
     }

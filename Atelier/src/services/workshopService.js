@@ -2,7 +2,7 @@ const STORAGE_KEY = "workshopList" //por convención al ser una constante de con
 //fuente: https://www.flino.dev/blog/09-convenciones-codigo-case/ 
 
 export function getWorkshops() {
-     return JSON.parse(localSTorage.getItem(STORAGE_KEY)) || []
+     return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
 }
 
 export function saveWorkshop(formData, editIndex) {
@@ -18,7 +18,7 @@ export function saveWorkshop(formData, editIndex) {
 }
 
 export function deleteWorkshop(indexToDelete){
-    const acutalizado = getWorkshops().filter((item, i) => i != indexToDelete)
+    const actualizado = getWorkshops().filter((item, i) => i != indexToDelete)
     localStorage.setItem(STORAGE_KEY, JSON.stringify(actualizado))
     
     return actualizado
