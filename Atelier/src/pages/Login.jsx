@@ -2,7 +2,8 @@ import React from 'react'
 import './pages.css'
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react'
-import { usuarios } from '../../src/data/data.js'
+// import { usuarios } from '../../src/data/data.js'
+import { login } from '../services/userService.js'
 import ButtonBase from '../components/Buttons/ButtonBase.jsx';
 import Logo from '../assets/atelier-logo.png'
 import logout from '../assets/logout.png'
@@ -10,6 +11,7 @@ import Swal from 'sweetalert2'
 import '../components/Buttons/button.css'
 
 import {useLogin} from '../context/session.context.jsx'
+
 
 
 
@@ -25,7 +27,10 @@ function LogIn() {
   const handleLoginSubmit = (event) =>{
     event.preventDefault() //uso el preventDefautl xq no quiero que se recargue por ser un formulario
 
-    const foundUser = usuarios.find((u) => u.email === email && u.password === password);
+    // ANTES: 
+    // const foundUser = usuarios.find((u) => u.email === email && u.password === password);
+    // Ahora:
+    const foundUser = login(email, password)
     
       //acá tendré que validar las credenciales
       if(foundUser){

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate} from "react-router-dom"
-import { usuarios } from '../../data/data.js'
+// import { usuarios } from '../../data/data.js'
+import { findUserByEmail } from '../../services/userService.js'
 import { useState, useEffect } from 'react'
 import ButtonBase from '../Buttons/ButtonBase.jsx'
 import './TopBar.css'
@@ -18,9 +19,8 @@ function TopBar({label, onClick}) {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const idObtain = localStorage.getItem("userId") //acá lleag como un string
-    const idNumber = Number(idObtain) //lo convierto a número
-    const userFound = usuarios.find(u => u.email === email) //el dato de quién está logueado viene del email ahora
+    // const userFound = usuarios.find(u => u.email === email) el dato de quién está logueado viene del email ahora
+    const userFound = findUserByEmail(email)
 
     if(userFound) {
       setUserImg(userFound.img);

@@ -4,8 +4,6 @@
 // Importo mejor en una sola línea así:
 import { useContext, createContext, useState } from 'react'
 
-// Importo los arrays que tengo hardcodeados en data.js para usarlos como estado global
-import { usuarios, talleres, reservas } from '../data/data.js'
 
 export const Session = createContext()
 
