@@ -1,7 +1,32 @@
 import express from "express"
+import { getUsuarios } from "./controllers/usuarios.controller.js"
+import UsuarioApi from "./routes/usuarios.routes.js"
 
 const app = express() // esto CREA nuestro servidor
 
-app.get("/", () => console.log("Recibida la solicitud!"))
+/*
+app.get("/", (req, res) => {
+    console.log({message: "Recibida la solicitud!"})  // esta es la respuesta (del que le pido la hamburguesa)
+})
+*/
 
-app.listen( 2026, () => console.log("funciona!") )
+app.use( express.json()) //esto es un milware. Un intermedierio entre la solicitud y el momento en que comienzo a manerjar en express.
+app.use(UsuarioApi)
+
+app.get("/", getUsuarios)
+
+app.get("/", (req, res) => {
+    console.log(req.params.id)  // esta es la respuesta (del que le pido la hamburguesa)
+})
+
+app.get("/:id", (req, res) => {
+    console.log(req.params.id)
+})
+
+
+
+app.post("/", (req, res) => {
+    console.log(req.body.nombre)
+})
+
+app.listen( 2026, () => console.log("funciona!") ) // estre es nuestro puerto 2026
