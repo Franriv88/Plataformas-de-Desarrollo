@@ -6,7 +6,7 @@ const pool = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "",
-    databese: "acn4av",
+    database: "acn4av",
     waitForConnections: true, // si supero el máx, esperar a que me dejen conectar
     conectionLimit: 10,       // máx 10 conecciones
     queueLimit: 0             // no hay fila de espera, puede haber la cant de solicitudes ilimitadas
