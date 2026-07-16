@@ -1,9 +1,10 @@
 import express from "express"
-import { getUsuarios } from "./controllers/usuarios.controller.js"
 import UsuarioApi from "./routes/usuarios.routes.js"
+import dotenv from "dotenv"
 
 const app = express() // esto CREA nuestro servidor
 
+dotenv.config()
 /*
 app.get("/", (req, res) => {
     console.log({message: "Recibida la solicitud!"})  // esta es la respuesta (del que le pido la hamburguesa)
@@ -13,7 +14,7 @@ app.get("/", (req, res) => {
 app.use( express.json()) //esto es un milware. Un intermedierio entre la solicitud y el momento en que comienzo a manerjar en express.
 app.use(UsuarioApi)
 
-app.get("/", getUsuarios)
+// app.get("/", getUsuarios)
 
 app.get("/", (req, res) => {
     console.log(req.params.id)  // esta es la respuesta (del que le pido la hamburguesa)
