@@ -1,4 +1,5 @@
 import * as UsuarioModel from "../models/usuarioModel.js"
+import jwt from "jsonwebtoken"
 
 export async function getUsuarios(req, res){
     try{
@@ -21,5 +22,27 @@ export async function getUsuariosById(req, res){
         res.status(200).json({result})
     } catch (error) {
         res.status(500).json({mesasge: error.message})
+    }
+}
+
+// LOGIN //
+// acá agregamos el controller que llama a la "functgion login(email, password)" del usuarioModel.js
+export async function login(req,res){
+    const email = req.body.email
+    const password = req.body.password
+
+    try {
+        const results = await UsuarioModel.login(email, password)
+        if (!results){
+            return res.status(400).json({ message: "Email y/o contraseña equivocados"})
+        }
+
+        const token = jwt.sign({...results, password: undefined}, process.env.JWT_SECRET,{ expiresIn: "2h"})
+        console.log(results)
+
+        res.status(200).json({ usuario: {...results, password: undefined}, token })
+
+    } catch(error) {
+        res.status(500).json({ message: error.message })
     }
 }
