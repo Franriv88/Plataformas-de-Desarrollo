@@ -2,6 +2,7 @@ import express from "express"
 import UsuarioApi from "./routes/usuarios.routes.js"
 import WorkshopApi from "./routes/workshops.routes.js"
 import dotenv from "dotenv"
+import cors from "cors"
 
 const app = express() // esto CREA nuestro servidor
 
@@ -12,7 +13,9 @@ app.get("/", (req, res) => {
 })
 */
 
+// Obs: El orden acá importa! así que cors() no puede ir al final
 app.use( express.json()) //esto es un milware. Un intermedierio entre la solicitud y el momento en que comienzo a manerjar en express.
+app.use(cors())
 app.use(UsuarioApi)
 app.use(WorkshopApi)
 
