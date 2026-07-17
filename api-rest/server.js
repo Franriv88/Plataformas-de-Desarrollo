@@ -1,5 +1,6 @@
 import express from "express"
 import UsuarioApi from "./routes/usuarios.routes.js"
+import WorkshopApi from "./routes/workshops.routes.js"
 import dotenv from "dotenv"
 
 const app = express() // esto CREA nuestro servidor
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 
 app.use( express.json()) //esto es un milware. Un intermedierio entre la solicitud y el momento en que comienzo a manerjar en express.
 app.use(UsuarioApi)
+app.use(WorkshopApi)
 
 // app.get("/", getUsuarios)
 

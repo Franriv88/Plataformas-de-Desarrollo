@@ -21,3 +21,11 @@ export function verificarToken(req, res, next){
         return res.status(400).json({ message: "Token inválido "})
     }
 }
+
+export function esAdmin(req, res, next){
+    if(req.usuario?.rol !=="admin"){
+        return res.status(400).json({message: "Acceso solo para el admin "})
+    }
+    
+    next()
+}
