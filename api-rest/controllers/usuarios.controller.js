@@ -3,9 +3,11 @@ import jwt from "jsonwebtoken"
 
 export async function getUsuarios(req, res){
     try{
-        const results = await UsuarioModel.find()
+        const result = await UsuarioModel.find()
+        const usuarios = result.map(u => ({...u, password: undefined}))
 
-        res.status(200).json({results})
+        res.status(200).json({usuarios})
+
     } catch (error) {
         res.status(500).json({mesasge: error.message})
     }
@@ -15,11 +17,16 @@ export async function getUsuarios(req, res){
 // acá tendremos el MÉTDO correspóndiente a ID
 export async function getUsuariosById(req, res){
     const id = req?.params?.id   // ponemos ? para tener parámetros opcionales pues puede que esto falle así que indicamos que el campo puede ser opcional y en lugar de dar error da undefined y entra en el if
-        if (!id ) res.status(400).json({message: "El id es obligatorio"})
+        if(!id) {res.status(400).json({message: "El id es obligatorio"})
+            return res.status(400).json({message: "El id es obligatorio"})
+    }
+    
     try{
-        const result = await UsuarioModel.find(id)  // en este caso es un solo resultado (result) sin la "s"
+        const result = await UsuarioModel.findById(id)  // en este caso es un solo resultado (result) sin la "s"
+        const usuario = result.map(u => ({...u, password: undefined}))
 
-        res.status(200).json({result})
+        res.status(200).json({usuario})
+
     } catch (error) {
         res.status(500).json({mesasge: error.message})
     }
